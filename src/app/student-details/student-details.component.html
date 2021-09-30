@@ -1,0 +1,33 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Register</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-student-detail-form></app-student-detail-form>
+
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>LastName</th>
+                    <th>Dob</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sd of service.list">
+                    <td (click)="populateForm(sd)">{{sd.Name}}</td>
+                    <td (click)="populateForm(sd)">{{sd.LastName}}</td>
+                    <td (click)="populateForm(sd)">{{sd.Dob}}</td>
+                    <td (click)="populateForm(sd)">{{sd.Gender}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(sd.Id)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
